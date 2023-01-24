@@ -1,6 +1,13 @@
+Create a Folder javascript folder named js that contains logic.js and questions.js
+
+create Questions For the Quiz
+
 list out the major functions that will be needed in groups 
 
-Start Quiz Function
+          Start Quiz Function
+Add event listening button to start the quiz
+
+
 Time Function = Setinterval function
 choice of answer function
 response function
