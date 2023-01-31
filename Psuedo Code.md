@@ -19,6 +19,27 @@ e.g. idtags,classes e.t.c
 
 Go through the html Files and create variables that will be needed for this quiz
 
+Procedure/Aproach
+
+questions
+startQuiz()
+start timer
+show first question
+askQuestion()
+get first question from array
+appendt title of question to page
+loop over choices
+create a button for each choice so we can select one
+questionClicked()
+get where the click happened
+check if user guessed wrong
+if guessed wrong, deduct time from scrore
+move to next question
+check if we've got no more questions 
+stopQuiz()
+run the askQuestion func again
+save user score in high score 
+retrieve when needed and clear when needed   
 
 
 

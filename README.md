@@ -7,3 +7,4 @@ The quiz should End when all questions have been answered or user runs out of ti
 timer = 0
  
  When the game ends, user score will be displayed and user will have the ability to save their initials and their score
+ which is then stored in a High Scores page

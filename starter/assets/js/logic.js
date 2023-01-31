@@ -110,25 +110,28 @@ let mainQuestions = [
     }];
 
 //   console.log(mainQuestions)
-   // questions
-   // startQuiz()
+
+
+    // questions
+    // startQuiz()
     // start timer
     // show first question
-   // askQuestion()
+    // askQuestion()
     // get first question from array
     // appendt title of question to page
     // loop over choices
-        // create a button for each choice so we can select one
+    // create a button for each choice so we can select one
     // questionClicked()
-        //get where the click happened
-        //check if user guessed wrong
-        // if guessed wrong, deduct time from scrore
-        //// move to next question
-        // check if we've got no more questions 
-        // stopQuiz()
-        // run the askQuestion func again
+    // get where the click happened
+    // check if user guessed wrong
+    // if guessed wrong, deduct time from scrore
+    // move to next question
+    // check if we've got no more questions 
+    // stopQuiz()
+    // run the askQuestion func again
+    // start a clock 
 
-    // start a clock
+             // Getting The Elements Needed //
 
 var timeEl = document.querySelector("#time");
 var screenEl = document.querySelector("#start-screen");
@@ -163,6 +166,8 @@ startBtnEl.addEventListener("click", startQuiz,)
 //Start Screen display is set too none  
 var timerId;
 let time = 100    
+
+
 // setting timer and clear timer
 function setTime(){
         time--;
@@ -172,7 +177,6 @@ function setTime(){
         }
 }
 
-// 
 // console.log(score)
 let currentQuestion = {}
 let buttonsDiv;
@@ -196,15 +200,15 @@ for (let index = 0; index < currentQuestion.options.length; index++) {
     btn.textContent = index + 1 + ': ' + element;
     choices.onclick = questionClicked
     choiceEl.appendChild(btn)
-    // let answerButtonEl = querySelector
 }
 
 
 function questionClicked(event) {
     let btn = event.target
-    // event.preventDefault();
+   
     
 // console.log(event.target.value)
+
 if (event.target.value !== mainQuestions[currentQuestionIndex].correctChoices) {
        
     feedbackEl.textContent = 'Wrong Answer 10 Secs Deducted'
@@ -241,44 +245,29 @@ if (time <= 0 || currentQuestionIndex === mainQuestions.length) {
 }
 }
 
-// Function to end the quiz
+// Function to end the quiz//
+
 function endTheQuiz(){
        clearInterval(timerId)
        questionsEl.classList.add("hide") 
        document.getElementById("final-score").textContent = score 
 submitBtn
        endScreenEl.removeAttribute("class")
-    //  submitBtn.onclick = saveInitials()
 }
 
-
+   // Saving Name and Score//
 function saveInitials(){
     console.log("saveInitials")
 let name = userEl.value.trim();
 if (name !== ""){
-    let scores = JSON.parse(localStorage.getItem("highScores")) || [];
-    let score = {
-        score: time,
+    let scores = JSON.parse(localStorage.getItem("User-Name-Score")) || [];
+    let userNamescore = {
+        score: score,
         Initials: name
         };
-scores.push(score);
-localStorage.setItem("highScores", JSON.stringify(scores));
+scores.push(userNamescore);
+localStorage.setItem("User-Name-Score", JSON.stringify(scores));
 window.location.href="highscores.html";
-}
-// userEl.textContent = localStorage.setItem("userName", userEl)  
+} 
 }
 submitBtn.addEventListener("click", saveInitials)
-
-
-
-
-// function saveInitials(){
-//   localStorage.setItem("user", userEl.innerHTML);
-// }
-
-// userName = document.getElementById("initials").textContent
-// localStorage.setItem("userName", initials)
-
-// console.log(userName)
-// submitBtn.addEventListener("click" )
-// console.log(document.getElementById("initials").textContent)
