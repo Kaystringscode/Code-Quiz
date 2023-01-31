@@ -13,6 +13,9 @@ a:hover {
   color: #8570a5;
 }
 
+.hide {
+  display: none;
+}
 button {
   display: inline-block;
   margin: 5px;
